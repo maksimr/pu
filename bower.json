@@ -2,7 +2,8 @@
   "name": "myApp",
   "version": "0.0.0",
   "dependencies": {
-      "angular": "*"
+      "angular": "*",
+      "bootstrap": "*"
   },
   "devDependencies": {}
 }
