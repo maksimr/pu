@@ -1,0 +1,21 @@
+tbody tr td {
+    position: relative;
+    cursor: pointer;
+}
+
+tbody tr td:hover {
+    background-color: rgb(255, 254, 209);
+}
+
+tbody tr td:after {
+    content: '';
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 50px;
+    height: 100%;
+
+    background: repeat url('/src/img/bg_break.png') #f6f6f6;
+}

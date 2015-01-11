@@ -6,64 +6,38 @@
         <title>Leningrad United</title>
         <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" type="text/css"
         media="all" />
+        <link rel="stylesheet" href="src/css/main.css" type="text/css" media="all" />
 
+        <script src="lib/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
         <script src="lib/angular/angular.js" type="text/javascript" charset="utf-8"></script>
-        <script src="src/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="lib/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="src/js/main.js" type="text/javascript" charset="utf-8"></script>
     </head>
 
-    <body>
+    <body ng-controller="MainController">
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th></th>
-                    <th>13:00</th>
-                    <th>14:00</th>
-                    <th>15:00</th>
-                    <th>16:00</th>
-                    <th>17:00</th>
-                    <th>18:00</th>
+                    <th ng-repeat="box in speechBoxes">
+                        {{box.time}}
+                    </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr ng-repeat="comunity in comunityList">
                     <th>
                         <center>
-                            SPRUG
+                            {{comunity.name}}
                         </center>
                     </th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>
-                        <center>
-                            SMART
-                            <br/> Management
-                        </center>
-                    </th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>
-                        <center>
-                            DevOps-40
-                        </center>
-                    </th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+
+                    <td ng-repeat="box in speechBoxes" ng-mouseover="onFocusBox(box, comunity.name)">
+                        <div>
+                            {{box.title}}
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
