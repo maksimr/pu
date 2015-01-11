@@ -31,14 +31,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="comunity in comunityList" ng-class="{selected: comunity.name === focusComunity.comunityName}">
+                        <tr ng-repeat="comunity in comunityList" ng-class="{selected: comunity.name === focusComunity.comunityName}"
+                            ng-mouseover="onFocusComunity(comunity.name)">
                             <th>
                                 <center>
                                     {{comunity.name}}
                                 </center>
                             </th>
 
-                            <td ng-repeat="box in speechBoxes" ng-mouseover="onFocusBox(box, comunity.name)">
+                            <td ng-repeat="box in speechBoxes">
                                 <div>
                                     {{box.title}}
                                 </div>

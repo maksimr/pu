@@ -46,7 +46,7 @@
     $scope.speechBoxes = timeFrames.map(createSpeechBox);
     $scope.focusComunity = null;
 
-    $scope.onFocusBox = function(box, comunityName) {
+    $scope.onFocusComunity = function(comunityName) {
       $scope.focusComunity = {
         comunityName: comunityName,
         speechBoxes: $scope.speechBoxes

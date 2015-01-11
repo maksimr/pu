@@ -1,10 +1,13 @@
-tbody tr td {
-    position: relative;
+tbody tr {
     cursor: pointer;
 }
 
 tbody tr.selected {
     background-color: rgb(255, 254, 209);
+}
+
+tbody tr td {
+    position: relative;
 }
 
 tbody tr td:after {
