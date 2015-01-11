@@ -17,7 +17,7 @@ tbody tr td:after {
     width: 50px;
     height: 100%;
 
-    background: repeat url('/src/img/bg_break.png') #f6f6f6;
+    background: repeat url('img/bg_break.png') #f6f6f6;
 }
 
 .dl-speech-list dt {
