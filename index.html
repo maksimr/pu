@@ -25,21 +25,21 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th ng-repeat="box in speechBoxes">
-                                {{box.time}}
+                            <th ng-repeat="time in timeFrames">
+                                {{time}}
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="comunity in comunityList" ng-class="{selected: comunity.name === focusComunity.comunityName}"
-                            ng-mouseover="onFocusComunity(comunity.name)">
+                        <tr ng-repeat="comunity in comunityList" ng-class="{selected: comunity.name === focusComunity.name}"
+                            ng-mouseover="onFocusComunity(comunity)">
                             <th>
                                 <center>
                                     {{comunity.name}}
                                 </center>
                             </th>
 
-                            <td ng-repeat="box in speechBoxes">
+                            <td ng-repeat="box in comunity.speechBoxes">
                                 <div>
                                     {{box.title}}
                                 </div>
@@ -52,7 +52,7 @@
             <div class="col-xs-6 col-md-4">
                 <div ng-if="focusComunity">
                     <h4>
-                        {{focusComunity.comunityName}}
+                        {{focusComunity.name}}
                     </h4>
                     <hr/>
 
@@ -61,7 +61,7 @@
                             {{box.time}}
                         </dt>
                         <dd ng-repeat-end>
-                            {{box.title}}
+                            <input type="text" class="edit-comunity-name" ng-model="box.title"/>
                         </dd>
                     </dl>
                     <hr/>

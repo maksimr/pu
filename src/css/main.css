@@ -29,4 +29,9 @@ tbody tr td:after {
 
 .dl-speech-list dd {
     margin-left: 60px;
+    margin-bottom: 5px;
+}
+
+.edit-comunity-name {
+    border: none;
 }

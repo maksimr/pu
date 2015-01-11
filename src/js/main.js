@@ -42,15 +42,17 @@
       '18:00'
     ];
 
-    $scope.comunityList = comunityList();
-    $scope.speechBoxes = timeFrames.map(createSpeechBox);
+    $scope.timeFrames = timeFrames;
     $scope.focusComunity = null;
-
-    $scope.onFocusComunity = function(comunityName) {
-      $scope.focusComunity = {
-        comunityName: comunityName,
-        speechBoxes: $scope.speechBoxes
+    $scope.comunityList = comunityList().map(function(comunity) {
+      return {
+        name: comunity.name,
+        speechBoxes: timeFrames.map(createSpeechBox)
       };
+    });
+
+    $scope.onFocusComunity = function(comunity) {
+      $scope.focusComunity = comunity;
     };
   });
 
