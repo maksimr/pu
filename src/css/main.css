@@ -3,7 +3,7 @@ tbody tr td {
     cursor: pointer;
 }
 
-tbody tr td:hover {
+tbody tr.selected {
     background-color: rgb(255, 254, 209);
 }
 
