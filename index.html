@@ -9,8 +9,11 @@
         <link rel="stylesheet" href="src/css/main.css" type="text/css" media="all" />
 
         <script src="lib/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
-        <script src="lib/angular/angular.js" type="text/javascript" charset="utf-8"></script>
         <script src="lib/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="lib/angular/angular.js" type="text/javascript" charset="utf-8"></script>
+        <script src="lib/angular-bootstrap/ui-bootstrap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js" type="text/javascript"
+        charset="utf-8"></script>
 
         <script src="src/js/main.js" type="text/javascript" charset="utf-8"></script>
     </head>
@@ -41,6 +44,25 @@
                 </tr>
             </tbody>
         </table>
+
+        <div ng-if="focusComunity">
+            <h4>
+                {{focusComunity.comunityName}}
+            </h4>
+            <hr/>
+
+            <dl class="dl-horizontal">
+                <dt ng-repeat-start="box in focusComunity.speechBoxes">
+                    {{box.time}}
+                </dt>
+                <dd ng-repeat-end>
+                    {{box.title}}
+                </dd>
+            </dl>
+            <hr/>
+
+            <button class="btn btn-default">Хочу выступить</button>
+        </div>
     </body>
 
 </html>

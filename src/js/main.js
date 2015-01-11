@@ -1,5 +1,7 @@
 (function() {
-  var app = angular.module('app', []);
+  var app = angular.module('app', [
+    'ui.bootstrap'
+  ]);
 
   app.factory('comunityList', function() {
     var comunityList = [{
@@ -35,9 +37,13 @@
 
     $scope.comunityList = comunityList();
     $scope.speechBoxes = timeFrames.map(createSpeechBox);
+    $scope.focusComunity = null;
 
     $scope.onFocusBox = function(box, comunityName) {
-      console.log('Box:', comunityName, box);
+      $scope.focusComunity = {
+        comunityName: comunityName,
+        speechBoxes: $scope.speechBoxes
+      };
     };
   });
 
