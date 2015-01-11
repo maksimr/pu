@@ -4,13 +4,20 @@
   ]);
 
   app.factory('comunityList', function() {
-    var comunityList = [{
-      name: 'SPRUG'
-    }, {
-      name: 'SMART Management'
-    }, {
-      name: 'DevOps-40'
-    }];
+    var createComunity = function(comunityName) {
+      return {
+        name: comunityName
+      };
+    };
+
+    var comunityList = [
+      'SPRUG',
+      'SMART Management',
+      'DevOps-40',
+      'FrontEnd',
+      'ClojureSpb',
+      'Go',
+    ].map(createComunity);
 
     return function() {
       return comunityList;

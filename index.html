@@ -19,50 +19,55 @@
     </head>
 
     <body ng-controller="MainController">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th ng-repeat="box in speechBoxes">
-                        {{box.time}}
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="comunity in comunityList">
-                    <th>
-                        <center>
-                            {{comunity.name}}
-                        </center>
-                    </th>
+        <div class="container-fluid">
+            <div class="col-xs-12 col-md-8">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th ng-repeat="box in speechBoxes">
+                                {{box.time}}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="comunity in comunityList">
+                            <th>
+                                <center>
+                                    {{comunity.name}}
+                                </center>
+                            </th>
 
-                    <td ng-repeat="box in speechBoxes" ng-mouseover="onFocusBox(box, comunity.name)">
-                        <div>
+                            <td ng-repeat="box in speechBoxes" ng-mouseover="onFocusBox(box, comunity.name)">
+                                <div>
+                                    {{box.title}}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <div ng-if="focusComunity">
+                    <h4>
+                        {{focusComunity.comunityName}}
+                    </h4>
+                    <hr/>
+
+                    <dl class="dl-horizontal dl-speech-list">
+                        <dt ng-repeat-start="box in focusComunity.speechBoxes">
+                            {{box.time}}
+                        </dt>
+                        <dd ng-repeat-end>
                             {{box.title}}
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        </dd>
+                    </dl>
+                    <hr/>
 
-        <div ng-if="focusComunity">
-            <h4>
-                {{focusComunity.comunityName}}
-            </h4>
-            <hr/>
-
-            <dl class="dl-horizontal">
-                <dt ng-repeat-start="box in focusComunity.speechBoxes">
-                    {{box.time}}
-                </dt>
-                <dd ng-repeat-end>
-                    {{box.title}}
-                </dd>
-            </dl>
-            <hr/>
-
-            <button class="btn btn-default">Хочу выступить</button>
+                    <button class="btn btn-default">Хочу выступить</button>
+                </div>
+            </div>
         </div>
     </body>
-
 </html>

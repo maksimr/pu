@@ -19,3 +19,11 @@ tbody tr td:after {
 
     background: repeat url('/src/img/bg_break.png') #f6f6f6;
 }
+
+.dl-speech-list dt {
+    width: auto;
+}
+
+.dl-speech-list dd {
+    margin-left: 60px;
+}
